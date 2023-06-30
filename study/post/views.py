@@ -65,8 +65,8 @@ class CommentAPI(APIView):
         comment.content = request.data["content"]
         comment.writer = request.user
         comment.save()
-
         return Response(status=200)
+    
 
 
         
@@ -105,7 +105,7 @@ class Q1(APIView):
 
 # 2. '카테고리별' 게시글 조회
 class Q2(APIView):
-    # request = [category]
+    #request = [category]
     def get(self, request):
         # Category 이름으로 조회
         categoryObj = Category.objects.get(name = request.data["category"])
